@@ -18,14 +18,14 @@ for (let i=0;i<propertiesinputs.length;i++) {
     document.getElementById(propertiesinputs[i]).appendChild(clone);
 }
 
-document.getElementById(behaviourinputs[0]).value = "lethal.png"
-document.getElementById(behaviourinputs[1]).value = "violent.png"
-document.getElementById(behaviourinputs[2]).value = "easilyprovokable.png"
+document.getElementById(behaviourinputs[0]).value = "https://github.com/math0171512/scp-poster-generator/blob/main/images/lethal.png?raw=true"
+document.getElementById(behaviourinputs[1]).value = "https://github.com/math0171512/scp-poster-generator/blob/main/images/violent.png?raw=true"
+document.getElementById(behaviourinputs[2]).value = "https://github.com/math0171512/scp-poster-generator/blob/main/images/easilyprovokable.png?raw=true"
 
-document.getElementById(propertiesinputs[0]).value = "durable.png"
-document.getElementById(propertiesinputs[1]).value = "hyperfast.png"
+document.getElementById(propertiesinputs[0]).value = "https://github.com/math0171512/scp-poster-generator/blob/main/images/hyperfast.png?raw=true"
+document.getElementById(propertiesinputs[1]).value = "https://github.com/math0171512/scp-poster-generator/blob/main/images/durable.png?raw=true"
 
-document.getElementById("objectsafety").value = "euclid.webp"
+document.getElementById("objectsafety").value = "https://github.com/math0171512/scp-poster-generator/blob/main/images/euclid.webp?raw=true"
 
 const colormap = {
     "safe.png": "#4aa800",
@@ -48,7 +48,7 @@ function generatePoster() {
     scpnumber.style.textDecorationColor = colormap[objectimage]
 
     if (objectimage != "none") {
-        objectsafety.src = "images/"+objectimage
+        objectsafety.src = objectimage
         objectsafety.style.display = "inline"
         
     } else {
@@ -58,7 +58,7 @@ function generatePoster() {
     for (let i=0;i<behaviourinputs.length;i++) {
         const image = document.getElementById(behaviourinputs[i]).value
         if (image != "none") {
-            document.getElementById(behaviouroutputs[i]).src = "images/"+image
+            document.getElementById(behaviouroutputs[i]).src = image
             document.getElementById(behaviouroutputs[i]).style.display = "inline"
         } else {
             document.getElementById(behaviouroutputs[i]).style.display = "none"
@@ -67,7 +67,7 @@ function generatePoster() {
     for (let i=0;i<propertiesinputs.length;i++) {
         const image = document.getElementById(propertiesinputs[i]).value
         if (image != "none") {
-            document.getElementById(propertiesoutputs[i]).src = "images/"+image
+            document.getElementById(propertiesoutputs[i]).src = image
             document.getElementById(propertiesoutputs[i]).style.display = "inline"
         } else {
             document.getElementById(propertiesoutputs[i]).style.display = "none"
@@ -97,7 +97,7 @@ function generatePoster() {
     if (customimage && showimage) {
         document.getElementById("scpimage").src = URL.createObjectURL(customimage)
     } else if (!showimage) {
-        document.getElementById("scpimage").src = "images/no-image.png"
+        document.getElementById("scpimage").src = "https://github.com/math0171512/scp-poster-generator/blob/main/images/no-image.png?raw=true"
     }
     const behaviourtext = document.getElementById("behaviour-text").value
     const propertiestext = document.getElementById("properties-text").value
